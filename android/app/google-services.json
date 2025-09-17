@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089973926451",
+    "project_id": "reinternproject",
+    "storage_bucket": "reinternproject.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089973926451:android:52272a119433c3a12ac146",
+        "android_client_info": {
+          "package_name": "com.example.hhproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlSdbMTeHiHcGLRLeSUoR8GamBHrlQvCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

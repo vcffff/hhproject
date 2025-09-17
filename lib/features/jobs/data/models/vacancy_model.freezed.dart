@@ -11,7 +11,6 @@ part of 'vacancy_model.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-
 /// @nodoc
 mixin _$VacancyModel {
 
@@ -22,8 +21,6 @@ mixin _$VacancyModel {
 @pragma('vm:prefer-inline')
 $VacancyModelCopyWith<VacancyModel> get copyWith => _$VacancyModelCopyWithImpl<VacancyModel>(this as VacancyModel, _$identity);
 
-  /// Serializes this VacancyModel to a JSON map.
-  Map<String, dynamic> toJson();
 
 
 @override
@@ -31,7 +28,7 @@ bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is VacancyModel&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.company, company) || other.company == company));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
 int get hashCode => Object.hash(runtimeType,id,title,company);
 
@@ -208,11 +205,11 @@ return $default(_that.id,_that.title,_that.company);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
+
 
 class _VacancyModel implements VacancyModel {
   const _VacancyModel({required this.id, required this.title, required this.company});
-  factory _VacancyModel.fromJson(Map<String, dynamic> json) => _$VacancyModelFromJson(json);
+  
 
 @override final  String id;
 @override final  String title;
@@ -224,17 +221,14 @@ class _VacancyModel implements VacancyModel {
 @pragma('vm:prefer-inline')
 _$VacancyModelCopyWith<_VacancyModel> get copyWith => __$VacancyModelCopyWithImpl<_VacancyModel>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$VacancyModelToJson(this, );
-}
+
 
 @override
 bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is _VacancyModel&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.company, company) || other.company == company));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
 int get hashCode => Object.hash(runtimeType,id,title,company);
 
