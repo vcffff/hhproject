@@ -3,23 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hhproject/features/auth/domain/repositories/auth_repository.dart';
 import 'package:hhproject/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:hhproject/features/auth/presentation/ui/auth_page.dart';
-
-import 'package:hhproject/features/jobs/di.dart';
 import 'package:hhproject/features/jobs/domain/usecases/search_jobs.dart';
 import 'package:hhproject/features/jobs/presentation/bloc/vacancy_bloc.dart';
 import 'package:hhproject/features/jobs/presentation/bloc/vacancy_event.dart';
 import 'package:hhproject/features/jobs/presentation/bloc/vacancy_state.dart';
 import 'package:hhproject/features/jobs/presentation/ui/void.dart';
 import 'package:hhproject/firebase_options.dart';
+import 'package:hhproject/shared/di/injection.dart';
+import 'package:hhproject/shared/navigation/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   setupDi();
-
   runApp(MyApp());
-  print('hello');
 }
 
 class MyApp extends StatelessWidget {
@@ -32,7 +29,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => AuthBloc(getIt<AuthRepository>())),
       ],
 
-      child: MaterialApp(debugShowCheckedModeBanner: false, home: AuthScreen()),
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        routerConfig: router,
+      ),
     );
   }
 }
